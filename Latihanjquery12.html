@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan jQuery Pertama</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .welcome-box {
+            background-color: pink;
+            padding: 20px;
+            border-radius: 10px;
+            width: 320px;
+            margin: 0 auto 30px auto;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        #paragraf {
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .content-wrapper {
+            background-color: #ffe6ec; /* pink soft */
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .paragraph {
+            font-size: 16px;
+            line-height: 1.6;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px 5px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #3498db;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .button-wrapper {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="welcome-box">Selamat Datang</div>
+
+    <p id="paragraf">KUCING</p>
+
+    <div class="content-wrapper" id="paragraf2">
+        <div class="paragraph" id="kolom1">
+            Kucing adalah jenis hewan mamalia karnivora yang berasal dari keluarga felidae. Habitat kucing adalah di darat, yang biasanya berbaur dengan manusia sebagai hewan peliharaan atau ada juga yang hidup liar.
+            <br><br>
+            Kucing merupakan salah satu peliharaan favorit para pecinta hewan. Hal tersebut tidak mengherankan karena binatang berbulu ini memiliki paras lucu nan menggemaskan.
+        </div>
+        <div class="paragraph" id="kolom2">
+            Selain memiliki tingkah yang menggemaskan, kucing merupakan mamalia yang kerap menjadi hewan peliharaan banyak keluarga di dunia.
+            <br><br>
+            Hewan peliharaan seperti kucing memang bisa membuat hari-hari kamu penuh warna. Banyak orang merasa lebih bahagia dan tenang saat memelihara kucing di rumah.
+        </div>
+    </div>
+
+    <div class="button-wrapper">
+        <button id="tombol">Sembunyikan</button>
+        <button id="tampilkan">Tampilkan</button>
+        <button id="tukar">Tukar Paragraf</button>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#tombol").click(function () {
+                $("#paragraf").slideUp();
+                $("#paragraf2").slideUp();
+            });
+
+            $("#tampilkan").click(function () {
+                $("#paragraf").slideDown();
+                $("#paragraf2").slideDown();
+            });
+
+            $("#tukar").click(function () {
+                let isi1 = $("#kolom1").html();
+                let isi2 = $("#kolom2").html();
+
+                $("#kolom1").html(isi2);
+                $("#kolom2").html(isi1);
+            });
+        });
+    </script>
+</body>
+</html>
